@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d9f2dd5-8743-4c67-965b-777323fbee29" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mob.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/Mob.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +21,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1TEQ6tSwqkm9JwTIZJwCwfGzyFZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
