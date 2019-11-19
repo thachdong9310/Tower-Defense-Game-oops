@@ -2,7 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df590aed-5caa-4668-97c6-406296d41a34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TowerDefense/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/TowerDefense/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mau3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mau3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/.idea/TowerDefense.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/Save/Mission1.TD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/Save/Mission2.TD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/Save/Mission3.TD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/res/cell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/res/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/res/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/res/mob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/res/tileset_air.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/res/tileset_ground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Block.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Frame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/KeyHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Mob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Save.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Screen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/src/Value.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Block.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Frame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Mob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Save.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Screen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense/TowerDefense/target/classes/Value.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Value.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Value.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +55,11 @@
   <component name="ProjectId" id="1TBU6buyewJzkhmI9fIlSJDcCmZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OPPs/Java_Tower_Defense" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

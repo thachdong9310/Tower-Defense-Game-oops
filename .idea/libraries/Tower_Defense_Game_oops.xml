@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Tower-Defense-Game-oops">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/TowerDefense/src" />
+    </SOURCES>
+  </library>
+</component>
