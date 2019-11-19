@@ -1,35 +1,43 @@
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.io.FileInputStream;
+
+import com.sun.media.jfxmedia.events.PlayerEvent;
+import  sun.audio.*;
+import  java.io.*;
 
 import javax.swing.JFrame;
 
 public class Frame extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-	public static String title = "Tower Defense";
-	public static Dimension size = new Dimension(700, 550);
+			private static final long serialVersionUID = 1L;
+			public static String title = "Tower Defense";
+			public static Dimension size = new Dimension(700, 550);
 
 	public Frame() {
-		setTitle(title);
-		setSize(size);
-		setResizable(true);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		init();
-	}
+		Sound_cdjv sound=new Sound_cdjv("res/audio1.wav");
+		sound.start();
+				setTitle(title);
+				setSize(size);
+				setResizable(true);
+				setLocationRelativeTo(null);
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	public void init() {
-		setLayout(new GridLayout(1, 1, 0, 0));
+				init();
+			}
 
-		Screen screen = new Screen(this);
-		add(screen);
+			public void init() {
+				setLayout(new GridLayout(1, 1, 0, 0));
 
-		setVisible(true);
-	}
+				Screen screen = new Screen(this);
+				add(screen);
 
-	public static void main(String[] args) {
-		@SuppressWarnings("unused")
-		Frame frame = new Frame();
-	}
-}
+				setVisible(true);
+			}
+
+			public static void main(String[] args) {
+				@SuppressWarnings("unused")
+				Frame frame = new Frame();
+			}
+		}
