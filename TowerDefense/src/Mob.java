@@ -147,7 +147,7 @@ public class Mob extends Rectangle {
 	public double walkFrame = 1, walkSpeed = (mobSize / (i+1)) / (double) (Screen.fps);
 	public void setWalkSpeed()
 	{
-		walkSpeed = (mobSize / 0.01) / (double) (Screen.fps);
+		walkSpeed = (mobSize / 0.2) / (double) (Screen.fps);
 	}
 
 	public void draw(Graphics g) {
