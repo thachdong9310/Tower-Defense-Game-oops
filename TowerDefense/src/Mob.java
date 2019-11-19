@@ -22,7 +22,7 @@ public class Mob extends Rectangle {
 
 	public void spawnMob(int mobId) {
 		for (int y = 0; y < Screen.room.block.length; y++) {
-			if (Screen.room.block[y][0].groundId == Value.groundRoad) {
+			if (Screen.room.block[y][0].groundId == Value.groundRoad1 || Screen.room.block[y][0].groundId == Value.groundRoad2) {
 				setBounds(Screen.room.block[y][0].x, Screen.room.block[y][0].y, mobSize, mobSize);
 				xd = x;
 				yd = this.y;
@@ -48,12 +48,9 @@ public class Mob extends Rectangle {
 		Screen.life -= 1;
 	}
 
-	public double walkFrame = 1, walkSpeed = (mobSize / 1) / (double) (Screen.fps);
+	public double walkFrame = 1, walkSpeed = (mobSize / 3) / (double) (Screen.fps);
 
 	public void physics(int i) {
-
-		//if (walkFrame >= walkSpeed) {
-		//if (i == 0) System.out.println((int) ((Screen.timera / 60) - (Screen.timera / 60) % 1) + "\t\t" + Math.round(((Screen.timera / 60) % 1) * 60) + "\t" + (((Screen.timera / 60) % 1) * 60));
 
 		if (direction == up) {
 			yd -= walkSpeed;
@@ -83,15 +80,15 @@ public class Mob extends Rectangle {
 
 			try {
 				if (direction != down && direction != up) {
-					if (Screen.room.block[yCoord + 1][xCoord].groundId == Value.groundRoad) {
+					if (Screen.room.block[yCoord + 1][xCoord].groundId == Value.groundRoad1 || Screen.room.block[yCoord + 1][xCoord].groundId == Value.groundRoad2 ) {
 						direction = down;
-					} else if (Screen.room.block[yCoord - 1][xCoord].groundId == Value.groundRoad) {
+					} else if (Screen.room.block[yCoord - 1][xCoord].groundId == Value.groundRoad1 || Screen.room.block[yCoord - 1][xCoord].groundId == Value.groundRoad2) {
 						direction = up;
 					}
 				} else if (direction != right && direction != left) {
-					if (Screen.room.block[yCoord][xCoord + 1].groundId == Value.groundRoad && direction != left) {
+					if ((Screen.room.block[yCoord][xCoord + 1].groundId == Value.groundRoad1|| Screen.room.block[yCoord][xCoord + 1].groundId == Value.groundRoad2) && direction != left) {
 						direction = right;
-					} else if (Screen.room.block[yCoord][xCoord - 1].groundId == Value.groundRoad && direction != right) {
+					} else if ((Screen.room.block[yCoord][xCoord + 1].groundId == Value.groundRoad1|| Screen.room.block[yCoord][xCoord + 1].groundId == Value.groundRoad2) && direction != right) {
 						direction = left;
 					}
 				}
@@ -106,9 +103,6 @@ public class Mob extends Rectangle {
 			mobWalk -= Screen.room.blockSize;
 		}
 
-		//walkFrame = 1;//-= walkSpeed;
-		//} else
-		//walkFrame++;
 	}
 
 	public void loseHealth(int amount) {
