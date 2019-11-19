@@ -48,7 +48,7 @@ public class Mob extends Rectangle {
 		Screen.life -= 1;
 	}
 
-	public double walkFrame = 1, walkSpeed = (mobSize / 8) / (double) (Screen.fps);
+	public double walkFrame = 1, walkSpeed = (mobSize / 1) / (double) (Screen.fps);
 
 	public void physics(int i) {
 
