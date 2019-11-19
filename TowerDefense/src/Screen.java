@@ -75,9 +75,9 @@ public class Screen extends JPanel implements Runnable {
 
 		tilesetAir[0] = new ImageIcon("res/home.png").getImage();
 		tilesetAir[1] = new ImageIcon("res/click.png").getImage();
-		tilesetAir[2] = new ImageIcon("res/tower1.png").getImage();
-		tilesetAir[3] = new ImageIcon("res/tower2.png").getImage();
-		tilesetAir[4] = new ImageIcon("res/tower3.png").getImage();
+		tilesetAir[2] = new ImageIcon("res/tower.png").getImage();
+		tilesetAir[3] = new ImageIcon("res/tower1.png").getImage();
+		tilesetAir[4] = new ImageIcon("res/tower2.png").getImage();
 
 		tilesetRes[0] = new ImageIcon("res/cell.png").getImage();
 		tilesetRes[1] = new ImageIcon("res/coin.png").getImage();
@@ -87,6 +87,8 @@ public class Screen extends JPanel implements Runnable {
 		tilesetMob[1] = new ImageIcon("res/mob2.png").getImage();
 		tilesetMob[2] = new ImageIcon("res/mob3.png").getImage();
 		tilesetMob[3] = new ImageIcon("res/mob4.png").getImage();
+
+		Image start = new ImageIcon("res/start.png").getImage();
 
 		save.loadSave(new File("Save/Mission" + level + ".TD"));
 
@@ -180,7 +182,6 @@ public class Screen extends JPanel implements Runnable {
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 
-			// Update 60 times a second
 			while (delta >= 1) {
 				//update();
 				timera++;
