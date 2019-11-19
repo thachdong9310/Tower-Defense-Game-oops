@@ -13,8 +13,8 @@ public class Store {
 	public static int iconTextY = 15;
 	public static int itemIn = 4;
 	public static int heldId = -1, realId = -1;
-	public static int[] buttonId = { Value.airTowerLaser, Value.airTowerLaser, Value.airAir, Value.airAir, Value.airAir, Value.airAir, Value.airAir, Value.airTrashCan };
-	public static int[] buttonPrice = { 10, 15, 0, 0, 0, 0, 0, 0 };
+	public static int[] buttonId = { Value.airTowerLaser, Value.airTowerLaser1, Value.airTowerLaser2, Value.airAir, Value.airAir, Value.airAir, Value.airAir, Value.airTrashCan };
+	public static int[] buttonPrice = { 10, 20, 50, 0, 0, 0, 0, 0 };
 
 	public Rectangle[] button = new Rectangle[shopWidth];
 	public Rectangle buttonHealth, buttonCoins;
@@ -47,7 +47,8 @@ public class Store {
 					for (int y = 0; y < Screen.room.block.length; y++) {
 						for (int x = 0; x < Screen.room.block[0].length; x++) {
 							if (Screen.room.block[y][x].contains(Screen.mse)) {
-								if (Screen.room.block[y][x].groundId != Value.groundRoad && Screen.room.block[y][x].airId == Value.airAir) {
+								if ((Screen.room.block[y][x].groundId != Value.groundRoad1 ||
+										Screen.room.block[y][x].groundId != Value.groundRoad2 ||Screen.room.block[y][x].groundId != Value.groundRoad1 || Screen.room.block[y][x].groundId != Value.groundRoad2) && Screen.room.block[y][x].airId == Value.airAir) {
 									Screen.room.block[y][x].airId = heldId;
 									Screen.coins -= buttonPrice[realId];
 								}
@@ -62,8 +63,8 @@ public class Store {
 	public void define() {
 		for (int i = 0; i < button.length; i++)
 			button[i] = new Rectangle(Screen.myWidth / 2 - shopWidth * (buttonSize + cellSpace) / 2 + (buttonSize + cellSpace) * i, Screen.room.block[Screen.room.worldHeight - 1][0].y + Screen.room.blockSize + largeCellSpace, buttonSize, buttonSize);
-		buttonHealth = new Rectangle(Screen.room.block[0][0].x - 1, button[0].y, iconSize, iconSize);
-		buttonCoins = new Rectangle(Screen.room.block[0][0].x - 1, button[0].y + button[0].height - iconSize, iconSize, iconSize);
+		    buttonHealth = new Rectangle(Screen.room.block[0][0].x - 1, button[0].y, iconSize, iconSize);
+		    buttonCoins = new Rectangle(Screen.room.block[0][0].x - 1, button[0].y + button[0].height - iconSize, iconSize, iconSize);
 	}
 
 	public void draw(Graphics g) {

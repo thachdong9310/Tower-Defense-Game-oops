@@ -24,7 +24,7 @@ public class Screen extends JPanel implements Runnable {
 	public static Image[] tilesetMob = new Image[100];
 
 	public static int myWidth, myHeight;
-	public static int coins = 10, life = 10;
+	public static int coins = 10, life = 100;
 	public static int killed = 0, killsToWin = 0;
 	public static int level = 1, maxLevel = 3;
 
@@ -60,15 +60,25 @@ public class Screen extends JPanel implements Runnable {
 		save = new Save();
 		store = new Store();
 
-		for (int i = 0; i < tilesetGround.length; i++) {
-			tilesetGround[i] = new ImageIcon("res/tileset_ground.png").getImage();
-			tilesetGround[i] = createImage(new FilteredImageSource(tilesetGround[i].getSource(), new CropImageFilter(0, 26 * i, 26, 26)));
-		}
 
-		for (int i = 0; i < tilesetAir.length; i++) {
-			tilesetAir[i] = new ImageIcon("res/tileset_air.png").getImage();
-			tilesetAir[i] = createImage(new FilteredImageSource(tilesetAir[i].getSource(), new CropImageFilter(0, 26 * i, 26, 26)));
-		}
+		tilesetGround[0]= new ImageIcon("res/grass1.png").getImage();
+		tilesetGround[1]= new ImageIcon("res/grass3.png").getImage();
+		tilesetGround[2]= new ImageIcon("res/grass2.png").getImage();
+		tilesetGround[3]= new ImageIcon("res/grass4.png").getImage();
+		tilesetGround[4]= new ImageIcon("res/grass5.png").getImage();
+		tilesetGround[5]= new ImageIcon("res/grass6.png").getImage();
+		tilesetGround[6]= new ImageIcon("res/grass7.png").getImage();
+		tilesetGround[7]= new ImageIcon("res/grass8.png").getImage();
+		tilesetGround[8]= new ImageIcon("res/grass9.png").getImage();
+		tilesetGround[9]= new ImageIcon("res/grass10.png").getImage();
+		tilesetGround[10]= new ImageIcon("res/grass11.png").getImage();
+		tilesetGround[11]= new ImageIcon("res/grass12.png").getImage();
+
+		tilesetAir[0] = new ImageIcon("res/home.png").getImage();
+		tilesetAir[1] = new ImageIcon("res/click.png").getImage();
+		tilesetAir[2] = new ImageIcon("res/tower1.png").getImage();
+		tilesetAir[3] = new ImageIcon("res/tower2.png").getImage();
+		tilesetAir[4] = new ImageIcon("res/tower3.png").getImage();
 
 		tilesetRes[0] = new ImageIcon("res/cell.png").getImage();
 		tilesetRes[1] = new ImageIcon("res/coin.png").getImage();
@@ -110,8 +120,7 @@ public class Screen extends JPanel implements Runnable {
 			}
 
 			store.draw(g);
-			//g.drawString(mobs[0].xCoord + "     " + mobs[0].yCoord, 10, 10);
-			//g.drawString("" + (int) ((timera / 60) - (timera / 60) % 1) + "    " + (int) (((timera / 60) % 1) * 60), 10, 10);
+
 
 			if (life < 1) {
 				g.setColor(new Color(240, 20, 20));
@@ -135,7 +144,7 @@ public class Screen extends JPanel implements Runnable {
 		}
 	}
 
-	public double spawnTime = 5 * (double) (fps), spawnFrame = spawnTime - fps;
+	public double spawnTime = 1 * (double) (fps), spawnFrame = spawnTime - fps;
 
 	public void mobSpawner() {
 		if (spawnFrame >= spawnTime) {
@@ -146,7 +155,7 @@ public class Screen extends JPanel implements Runnable {
 					break;
 				}
 			}
-			spawnFrame = 1;//-= spawnTime;
+			spawnFrame = 1;
 		} else {
 			spawnFrame++;
 		}
@@ -203,7 +212,6 @@ public class Screen extends JPanel implements Runnable {
 			repaint();
 			frames++;
 
-			// Keep track of and display the game's ups and fps every second
 			if (System.currentTimeMillis() - timer >= 1000) {
 				timer += 1000;
 				frame.setTitle(Frame.title + " | ups: " + updates + " | fps: " + frames);
