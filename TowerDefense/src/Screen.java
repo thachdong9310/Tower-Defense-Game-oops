@@ -11,7 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class Screen extends JPanel implements Runnable {
-
 	private static final long serialVersionUID = 1L;
 	public Thread thread = new Thread(this);
 	private Frame frame;
@@ -24,7 +23,7 @@ public class Screen extends JPanel implements Runnable {
 	public static Image[] tilesetMob = new Image[100];
 
 	public static int myWidth, myHeight;
-	public static int coins = 10, life = 100;
+	public static int coins = 20, life = 15;
 	public static int killed = 0, killsToWin = 0;
 	public static int level = 1, maxLevel = 3;
 
@@ -84,7 +83,10 @@ public class Screen extends JPanel implements Runnable {
 		tilesetRes[1] = new ImageIcon("res/coin.png").getImage();
 		tilesetRes[2] = new ImageIcon("res/heart.png").getImage();
 
-		tilesetMob[0] = new ImageIcon("res/mob.png").getImage();
+		tilesetMob[0] = new ImageIcon("res/mob1.png").getImage();
+		tilesetMob[1] = new ImageIcon("res/mob2.png").getImage();
+		tilesetMob[2] = new ImageIcon("res/mob3.png").getImage();
+		tilesetMob[3] = new ImageIcon("res/mob4.png").getImage();
 
 		save.loadSave(new File("Save/Mission" + level + ".TD"));
 
@@ -144,7 +146,7 @@ public class Screen extends JPanel implements Runnable {
 		}
 	}
 
-	public double spawnTime = 1 * (double) (fps), spawnFrame = spawnTime - fps;
+	public double spawnTime = 3 * (double) (fps), spawnFrame = spawnTime - fps;
 
 	public void mobSpawner() {
 		if (spawnFrame >= spawnTime) {

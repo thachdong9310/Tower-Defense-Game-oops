@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class Frame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	public static String title = "Tower Defense";
+	public static String title = "House Defense";
 	public static Dimension size = new Dimension(700, 550);
 
 	public Frame() {

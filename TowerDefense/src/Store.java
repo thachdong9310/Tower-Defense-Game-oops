@@ -66,10 +66,12 @@ public class Store {
 		    buttonHealth = new Rectangle(Screen.room.block[0][0].x - 1, button[0].y, iconSize, iconSize);
 		    buttonCoins = new Rectangle(Screen.room.block[0][0].x - 1, button[0].y + button[0].height - iconSize, iconSize, iconSize);
 	}
+	public static int i=0;
 
 	public void draw(Graphics g) {
 
-		for (int i = 0; i < button.length; i++) {
+		for (i=0; i < button.length; i++) {
+
 			if (button[i].contains(Screen.mse)) {
 				g.setColor(new Color(255, 255, 255, 150));
 				g.fillRect(button[i].x, button[i].y, button[i].width, button[i].height);

@@ -1,12 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Random;
 
 public class Mob extends Rectangle {
 
 	private static final long serialVersionUID = 1L;
+	Random rd = new Random();
 	public int xCoord, yCoord;
-	public int health, maxHealth = 100;
+	public int health, maxHealth = 1300;
 	public int healthSpace = 3, healthHeight = 6;
 	public int mobSize = Screen.room.blockSize;
 	public double mobWalk;
@@ -48,7 +50,6 @@ public class Mob extends Rectangle {
 		Screen.life -= 1;
 	}
 
-	public double walkFrame = 1, walkSpeed = (mobSize / 3) / (double) (Screen.fps);
 
 	public void physics(int i) {
 
@@ -105,10 +106,6 @@ public class Mob extends Rectangle {
 
 	}
 
-	public void loseHealth(int amount) {
-		health -= amount;
-		checkDeath();
-	}
 
 	public void checkDeath() {
 		if (health <= 0 && died == false) {
@@ -121,15 +118,40 @@ public class Mob extends Rectangle {
 	}
 
 	public void getMoney() {
-		Screen.coins += Value.deathReward[mobId];
+		Screen.coins += deathReward[mobId];
 	}
 
 	public boolean isDead() {
 		return died;
 	}
+	public int i=rd.nextInt(4);
+	public void loseHealthEnemy1() {
+		if(i==2&&health<maxHealth/2){setWalkSpeed(); health -= 2;}
+		if(i==3&&health>maxHealth/2){health -= 0.003;}
+		else health -= 10-2*i;
+		checkDeath();
+	}
+	public void loseHealthEnemy2() {
+		if(i==2&&health<maxHealth/2){setWalkSpeed(); health -= 4;}
+		if(i==3&&health>maxHealth/2){health -= 0.006;}
+		else health -= 2*(10-2*i);
+		checkDeath();
+	}
+	public void loseHealthEnemy3() {
+		if(i==2&&health<maxHealth/2){setWalkSpeed(); health -= 6;}
+		if(i==3&&health>maxHealth/2){health -= 0.009;}
+		else health -= 3*(10-2*i);
+		checkDeath();
+	}
+	public int[] deathReward = { 2 + i*2};
+	public double walkFrame = 1, walkSpeed = (mobSize / (i+1)) / (double) (Screen.fps);
+	public void setWalkSpeed()
+	{
+		walkSpeed = (mobSize / 0.5) / (double) (Screen.fps);
+	}
 
 	public void draw(Graphics g) {
-		g.drawImage(Screen.tilesetMob[mobId], x, y, width, height, null);
+		g.drawImage(Screen.tilesetMob[i], x, y, width, height, null);
 
 		g.setColor(new Color(180, 50, 50));
 		g.fillRect(x, y - healthSpace - healthHeight, mobSize, healthHeight);
