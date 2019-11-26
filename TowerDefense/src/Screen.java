@@ -21,9 +21,10 @@ public class Screen extends JPanel implements Runnable {
 	public static Image[] tilesetAir = new Image[100];
 	public static Image[] tilesetRes = new Image[100];
 	public static Image[] tilesetMob = new Image[100];
+	public static Image[] victory = new Image[100];
 
 	public static int myWidth, myHeight;
-	public static int coins = 20, life = 15;
+	public static int coins = 15, life = 15;
 	public static int killed = 0, killsToWin = 0;
 	public static int level = 1, maxLevel = 3;
 
@@ -75,9 +76,9 @@ public class Screen extends JPanel implements Runnable {
 
 		tilesetAir[0] = new ImageIcon("res/home.png").getImage();
 		tilesetAir[1] = new ImageIcon("res/click.png").getImage();
-		tilesetAir[2] = new ImageIcon("res/tower.png").getImage();
-		tilesetAir[3] = new ImageIcon("res/tower1.png").getImage();
-		tilesetAir[4] = new ImageIcon("res/tower2.png").getImage();
+		tilesetAir[2] = new ImageIcon("res/tower1.png").getImage();
+		tilesetAir[3] = new ImageIcon("res/tower2.png").getImage();
+		tilesetAir[4] = new ImageIcon("res/tower3.png").getImage();
 
 		tilesetRes[0] = new ImageIcon("res/cell.png").getImage();
 		tilesetRes[1] = new ImageIcon("res/coin.png").getImage();
@@ -88,7 +89,9 @@ public class Screen extends JPanel implements Runnable {
 		tilesetMob[2] = new ImageIcon("res/mob3.png").getImage();
 		tilesetMob[3] = new ImageIcon("res/mob4.png").getImage();
 
-		Image start = new ImageIcon("res/start.png").getImage();
+		victory[1] = new ImageIcon("res/victory.png").getImage();
+		victory[2] = new ImageIcon("res/lose.png").getImage();
+		victory[3] = new ImageIcon("res/victory1.png").getImage();
 
 		save.loadSave(new File("Save/Mission" + level + ".TD"));
 
@@ -125,26 +128,15 @@ public class Screen extends JPanel implements Runnable {
 
 			store.draw(g);
 
-
 			if (life < 1) {
-				g.setColor(new Color(240, 20, 20));
-				g.fillRect(0, 0, myWidth, myHeight);
-				g.setColor(new Color(255, 255, 255));
-				g.setFont(new Font("Courier New", Font.BOLD, 14));
-				g.drawString("Game Over", 10, 20);
+			g.drawImage(victory[2],0,0,getWidth(),getHeight(),null);
 			}
 
 		} else {
-			g.setColor(new Color(255, 255, 255, 255));
-			g.fillRect(0, 0, getWidth(), getHeight());
-			g.setColor(new Color(0, 0, 0));
-			g.setFont(new Font("Courier New", Font.BOLD, 14));
-			String str = "";
-			if (level < maxLevel)
-				str += "Level complete. Please wait for the next level..";
-			else
-				str += "You won the game! Congratulations! The game will close shortly.";
-			g.drawString(str, 10, 20);
+			if (level < maxLevel) {
+				g.drawImage(victory[1],0,0,getWidth(),getHeight(),null);
+			} else
+				g.drawImage(victory[3], 0, 0, getWidth(), getHeight(), null);
 		}
 	}
 
@@ -183,7 +175,6 @@ public class Screen extends JPanel implements Runnable {
 			lastTime = now;
 
 			while (delta >= 1) {
-				//update();
 				timera++;
 				updates++;
 
@@ -200,7 +191,7 @@ public class Screen extends JPanel implements Runnable {
 						} else {
 							won = false;
 							level++;
-							coins = 10;
+							coins = 15;
 							define();
 						}
 						winFrame = 1;

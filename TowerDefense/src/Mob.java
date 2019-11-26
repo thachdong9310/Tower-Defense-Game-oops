@@ -1,3 +1,5 @@
+import sun.nio.cs.UnicodeEncoder;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -125,29 +127,28 @@ public class Mob extends Rectangle {
 		return died;
 	}
 	public int i=rd.nextInt(4);
-	public void loseHealthEnemy1() {
-		if(i==2&&health<maxHealth/2){setWalkSpeed(); health -= 2;}
-		if(i==3&&health>maxHealth/2){health -= 0.003;}
-		else health -= 10-2*i;
+
+	public void loseHealthEnemy1(int airId) {
+
+		if(i==2 && health < maxHealth/2){
+			setWalkSpeed();
+			health -= (3*airId);
+		}
+
+		if(i==3 && health > maxHealth/2) {
+			health -= (0.1*airId*3);
+		}
+
+		else health -= (10-2*i+airId*3);
+
 		checkDeath();
 	}
-	public void loseHealthEnemy2() {
-		if(i==2&&health<maxHealth/2){setWalkSpeed(); health -= 4;}
-		if(i==3&&health>maxHealth/2){health -= 0.006;}
-		else health -= 2*(10-2*i);
-		checkDeath();
-	}
-	public void loseHealthEnemy3() {
-		if(i==2&&health<maxHealth/2){setWalkSpeed(); health -= 6;}
-		if(i==3&&health>maxHealth/2){health -= 0.009;}
-		else health -= 3*(10-2*i);
-		checkDeath();
-	}
+
 	public int[] deathReward = { 2 + i*2};
 	public double walkFrame = 1, walkSpeed = (mobSize / (i+1)) / (double) (Screen.fps);
 	public void setWalkSpeed()
 	{
-		walkSpeed = (mobSize / 0.2) / (double) (Screen.fps);
+		walkSpeed = (mobSize / 0.18) / (double) (Screen.fps);
 	}
 
 	public void draw(Graphics g) {

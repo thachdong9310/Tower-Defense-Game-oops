@@ -47,9 +47,15 @@ public class Store {
 					for (int y = 0; y < Screen.room.block.length; y++) {
 						for (int x = 0; x < Screen.room.block[0].length; x++) {
 							if (Screen.room.block[y][x].contains(Screen.mse)) {
-								if ((Screen.room.block[y][x].groundId != Value.groundRoad1 ||
-										Screen.room.block[y][x].groundId != Value.groundRoad2 ||Screen.room.block[y][x].groundId != Value.groundRoad1 || Screen.room.block[y][x].groundId != Value.groundRoad2) && Screen.room.block[y][x].airId == Value.airAir) {
+								if ((Screen.room.block[y][x].groundId != Value.groundRoad1 &&
+										Screen.room.block[y][x].groundId != Value.groundRoad2 &&
+										Screen.room.block[y][x].groundId != Value.groundRoad3 &&
+										Screen.room.block[y][x].groundId != Value.groundRoad4 &&
+										Screen.room.block[y][x].groundId != Value.groundRoad5 &&
+										Screen.room.block[y][x].groundId != Value.groundRoad6) &&
+										Screen.room.block[y][x].airId == Value.airAir) {
 									Screen.room.block[y][x].airId = heldId;
+
 									Screen.coins -= buttonPrice[realId];
 								}
 							}

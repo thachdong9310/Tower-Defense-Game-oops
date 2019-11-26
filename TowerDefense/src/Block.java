@@ -50,7 +50,7 @@ public class Block extends Rectangle {
 		}
 		if (isShooting) {
 			if (loseFrame >= loseTime) {
-				Screen.mobs[shotMob].loseHealthEnemy1();
+				Screen.mobs[shotMob].loseHealthEnemy1(airId);
 				loseFrame -= loseTime;
 			} else {
 				loseFrame++;
