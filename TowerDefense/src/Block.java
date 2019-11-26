@@ -6,7 +6,7 @@ public class Block extends Rectangle {
 
 	private static final long serialVersionUID = 1L;
 	public Rectangle towerSquare;
-	public int towerSquareSize = 104;
+	public static int towerSquareSize = 104;
 	public int airId;
 	public int groundId;
 

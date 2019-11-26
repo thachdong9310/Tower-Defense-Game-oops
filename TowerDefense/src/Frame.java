@@ -12,11 +12,10 @@ public class Frame extends JFrame {
 	public static Dimension size = new Dimension(1000, 660);
 
 
-
 	public Frame() {
 		Sound_cdjv sound=new Sound_cdjv("res/audio1.wav");
 		sound.start();
-
+		
 				setTitle(title);
 				setSize(size);
 				setResizable(true);

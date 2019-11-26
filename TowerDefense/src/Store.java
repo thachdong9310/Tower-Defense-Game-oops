@@ -98,6 +98,11 @@ public class Store {
 		g.drawString("" + Screen.life, buttonHealth.x + buttonHealth.width + iconSpace, buttonHealth.y + iconTextY);
 		g.drawString("$" + Screen.coins, buttonCoins.x + buttonCoins.width + iconSpace, buttonCoins.y + iconTextY);
 
-		if (holdsItem) g.drawImage(Screen.tilesetAir[heldId], Screen.mse.x - (button[0].width - itemIn * 2) / 2 + itemIn, Screen.mse.y - (button[0].height - itemIn * 2) / 2 + itemIn, button[0].width - itemIn * 2, button[0].height - itemIn * 2, null);
+		if (holdsItem){
+			g.drawImage(Screen.tilesetAir[heldId], Screen.mse.x - (button[0].width - itemIn * 2) / 2 + itemIn, Screen.mse.y - (button[0].height - itemIn * 2) / 2 + itemIn, button[0].width - itemIn * 2, button[0].height - itemIn * 2, null);
+			g.setColor(Color.YELLOW);
+			g.drawOval(Screen.mse.x - (button[0].width - itemIn * 2) / 2 + itemIn-Block.towerSquareSize*4/5, Screen.mse.y - (button[0].height - itemIn * 2) / 2 + itemIn-Block.towerSquareSize*4/5, Block.towerSquareSize*2, Block.towerSquareSize*2);
+		}
+
 	}
 }

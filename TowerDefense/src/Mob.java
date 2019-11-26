@@ -19,9 +19,13 @@ public class Mob extends Rectangle {
 	public int mobId = Value.mobAir;
 	public boolean inGame = false, died = false;
 	public double xd, yd;
-
+	public static int count=0;
 	public Mob() {
 
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	public void spawnMob(int mobId) {
@@ -116,6 +120,8 @@ public class Mob extends Rectangle {
 			getMoney();
 			Screen.killed++;
 			Screen.hasWon();
+			Sound_cdjv sound=new Sound_cdjv("res/audio2.wav");
+			sound.start();
 		}
 	}
 
@@ -126,7 +132,12 @@ public class Mob extends Rectangle {
 	public boolean isDead() {
 		return died;
 	}
+
 	public int i=rd.nextInt(4);
+
+	public int getCount() {
+		return count++;
+	}
 
 	public void loseHealthEnemy1(int airId) {
 
