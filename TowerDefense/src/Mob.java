@@ -120,8 +120,6 @@ public class Mob extends Rectangle {
 			getMoney();
 			Screen.killed++;
 			Screen.hasWon();
-			Sound_cdjv sound=new Sound_cdjv("res/audio2.wav");
-			sound.start();
 		}
 	}
 
